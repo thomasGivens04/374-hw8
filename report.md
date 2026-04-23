@@ -1,5 +1,5 @@
 # CS374 Hotel Database Final Report
-*your names*
+*Thomas Givens & Aj Christina*
 
 ## ER Model
 *insert the image here*
