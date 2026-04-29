@@ -1,0 +1,180 @@
+INSERT INTO hotel VALUES
+(1,'Hotel A','Address A','111-1111','pool'),
+(2,'Hotel B','Address B','222-2222','spa'),
+(3,'Hotel C','Address C','333-3333','gym'),
+(4,'Hotel D','Address D','444-4444','bar'),
+(5,'Hotel E','Address E','555-5555','resort');
+
+INSERT INTO cat_discount VALUES
+('regular','0'),
+('gold','10');
+
+INSERT INTO guest VALUES
+(1,'passport','A','111','222','gold'),
+(2,'passport','B','111','222','gold'),
+(3,'passport','C','111','222','gold'),
+(4,'passport','D','111','222','gold'),
+(5,'passport','E','111','222','gold'),
+(6,'passport','F','111','222','regular'),
+(7,'passport','G','111','222','regular'),
+(8,'passport','H','111','222','regular'),
+(9,'passport','I','111','222','regular'),
+(10,'passport','J','111','222','regular');
+
+INSERT INTO room_type VALUES
+(1,'single',20,2,'basic',100),
+(1,'double',30,4,'standard',150),
+(2,'single',20,2,'basic',110),
+(2,'double',30,4,'standard',160),
+(3,'single',20,2,'basic',120),
+(3,'double',30,4,'standard',170),
+(4,'single',20,2,'basic',130),
+(4,'double',30,4,'standard',180),
+(5,'single',20,2,'basic',140),
+(5,'double',30,4,'standard',190);
+
+INSERT INTO room VALUES
+(101,1,1,'single'),
+(102,1,1,'single'),
+(103,1,1,'single'),
+(201,1,2,'double'),
+(202,1,2,'double'),
+(203,1,2,'double'),
+(104,2,1,'single'),
+(105,2,1,'single'),
+(106,2,1,'single'),
+(204,2,2,'double'),
+(205,2,2,'double'),
+(206,2,2,'double'),
+(107,3,1,'single'),
+(108,3,1,'single'),
+(109,3,1,'single'),
+(207,3,2,'double'),
+(208,3,2,'double'),
+(209,3,2,'double'),
+(110,4,1,'single'),
+(111,4,1,'single'),
+(112,4,1,'single'),
+(210,4,2,'double'),
+(211,4,2,'double'),
+(212,4,2,'double'),
+(113,5,1,'single'),
+(114,5,1,'single'),
+(115,5,1,'single'),
+(213,5,2,'double'),
+(214,5,2,'double'),
+(215,5,2,'double');
+
+INSERT INTO season VALUES
+(1,'Winter','2025-01-01','2025-03-31'),
+(1,'Summer','2025-06-01','2025-08-31'),
+(2,'Winter','2025-01-01','2025-03-31'),
+(2,'Summer','2025-06-01','2025-08-31'),
+(3,'Winter','2025-01-01','2025-03-31'),
+(3,'Summer','2025-06-01','2025-08-31'),
+(4,'Winter','2025-01-01','2025-03-31'),
+(4,'Summer','2025-06-01','2025-08-31'),
+(5,'Winter','2025-01-01','2025-03-31'),
+(5,'Summer','2025-06-01','2025-08-31');
+
+INSERT INTO pricing VALUES
+(1,'Winter','Mon',100),
+(1,'Winter','Tue',105),
+(1,'Winter','Wed',110),
+(1,'Winter','Thu',115),
+(1,'Winter','Fri',130),
+(1,'Summer','Mon',150),
+(1,'Summer','Tue',155),
+(1,'Summer','Wed',160),
+(1,'Summer','Thu',165),
+(1,'Summer','Fri',180),
+(2,'Winter','Mon',110),
+(2,'Winter','Tue',115),
+(2,'Winter','Wed',120),
+(2,'Winter','Thu',125),
+(2,'Winter','Fri',140),
+(2,'Summer','Mon',160),
+(2,'Summer','Tue',165),
+(2,'Summer','Wed',170),
+(2,'Summer','Thu',175),
+(2,'Summer','Fri',190),
+(3,'Winter','Mon',120),
+(3,'Winter','Tue',125),
+(3,'Winter','Wed',130),
+(3,'Winter','Thu',135),
+(3,'Winter','Fri',150),
+(3,'Summer','Mon',170),
+(3,'Summer','Tue',175),
+(3,'Summer','Wed',180),
+(3,'Summer','Thu',185),
+(3,'Summer','Fri',200),
+(4,'Winter','Mon',130),
+(4,'Winter','Tue',135),
+(4,'Winter','Wed',140),
+(4,'Winter','Thu',145),
+(4,'Winter','Fri',160),
+(4,'Summer','Mon',180),
+(4,'Summer','Tue',185),
+(4,'Summer','Wed',190),
+(4,'Summer','Thu',195),
+(4,'Summer','Fri',210),
+(5,'Winter','Mon',140),
+(5,'Winter','Tue',145),
+(5,'Winter','Wed',150),
+(5,'Winter','Thu',155),
+(5,'Winter','Fri',170),
+(5,'Summer','Mon',190),
+(5,'Summer','Tue',195),
+(5,'Summer','Wed',200),
+(5,'Summer','Thu',205),
+(5,'Summer','Fri',220);
+
+INSERT INTO stay VALUES
+(1,1,'2025-01-10','2025-01-12',101),
+(2,2,'2025-02-10','2025-02-12',104),
+(3,3,'2025-03-10','2025-03-12',107),
+(4,4,'2026-07-15','2026-07-17',110),
+(5,5,'2026-07-20','2026-07-22',113);
+
+INSERT INTO reservation VALUES
+(1,1,1,1,'2026-07-15','2026-07-17',2,'single'),
+(2,2,2,2,'2026-07-16','2026-07-18',1,'double'),
+(3,3,3,3,'2026-06-10','2026-06-12',2,'single'),
+(4,4,4,4,'2026-06-20','2026-06-23',2,'double'),
+(5,5,5,5,'2026-07-01','2026-07-04',1,'single'),
+(6,1,1,6,'2026-07-10','2026-07-12',1,'double'),
+(7,2,2,7,'2026-07-11','2026-07-13',2,'single'),
+(8,3,3,8,'2026-07-12','2026-07-14',1,'double'),
+(9,4,4,9,'2026-07-13','2026-07-15',2,'single'),
+(10,5,5,10,'2026-07-14','2026-07-16',1,'double');
+
+INSERT INTO occupant VALUES
+(1,1,'John'),
+(1,1,'Jane'),
+(2,2,'Bob'),
+(2,2,'Alice'),
+(3,3,'Charlie'),
+(4,4,'David'),
+(5,5,'Eve'),
+(6,1,'Sam'),
+(7,2,'Tom');
+
+INSERT INTO billing VALUES
+(1,1,450),
+(2,2,520),
+(3,3,380);
+
+INSERT INTO room_service VALUES
+(1,75),
+(1,25),
+(2,40),
+(2,30),
+(3,100),
+(3,20);
+
+INSERT INTO phone_number VALUES
+(1,'front desk','111-1111'),
+(2,'front desk','222-2222'),
+(3,'front desk','333-3333'),
+(4,'front desk','444-4444'),
+(5,'front desk','555-5555');
