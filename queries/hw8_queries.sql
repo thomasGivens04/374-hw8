@@ -45,7 +45,7 @@ reserved_by_type AS (
 vip_discount AS (
   SELECT COALESCE(MAX(percentage::numeric), 0) AS pct
   FROM cat_discount
-  WHERE lower(type) = 'VIP'
+  WHERE lower(type) = 'vip'
 )
 SELECT ti.type AS room_type,
        ti.total_rooms,
@@ -68,7 +68,7 @@ ORDER BY ti.type;
 BEGIN;
 
 INSERT INTO guest (id, id_type, first_name, last_name, address, home_phone, mobile_phone, category)
-VALUES (14, 'passport', 'Victor', 'Deadlock', '555 VIP Ave', '999-9999', '888-8888', 'VIP');
+VALUES (14, 'passport', 'Victor', 'Deadlock', '555 VIP Ave', '999-9999', '888-8888', 'vip');
 
 INSERT INTO stay (id, hotel_id, start_date, end_date, room_num)
 VALUES (16, 1, '2026-07-15'::date, '2026-07-17'::date, NULL);
