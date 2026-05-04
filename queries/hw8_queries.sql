@@ -142,7 +142,6 @@ WHERE s.id = 11
 GROUP BY s.start_date, s.end_date, r.room_type, b.total;
 
 --Query 4--
-UPDATE stay SET room_num = 205 WHERE id = 11;
 WITH selected_stay AS (
   SELECT s.id
   FROM stay s
