@@ -7,19 +7,23 @@ INSERT INTO hotel VALUES
 
 INSERT INTO cat_discount VALUES
 ('regular','0'),
-('gold','10');
+('gold','10'),
+('vip','15');
 
 INSERT INTO guest VALUES
-(1,'passport','A','111','222','gold'),
-(2,'passport','B','111','222','gold'),
-(3,'passport','C','111','222','gold'),
-(4,'passport','D','111','222','gold'),
-(5,'passport','E','111','222','gold'),
-(6,'passport','F','111','222','regular'),
-(7,'passport','G','111','222','regular'),
-(8,'passport','H','111','222','regular'),
-(9,'passport','I','111','222','regular'),
-(10,'passport','J','111','222','regular');
+(1,'passport','Jimmy','Stun','A','111','222','gold'),
+(2,'passport','Jimmy','Smart','B','111','222','gold'),
+(3,'passport','Jimmy','Stan','C','111','222','gold'),
+(4,'passport','Jimmy','Sarah','D','111','222','gold'),
+(5,'passport','Jimmy','Stu','E','111','222','gold'),
+(6,'passport','Jimmy','Son','F','111','222','regular'),
+(7,'passport','Jimmy','Sam','G','111','222','regular'),
+(8,'passport','Jimmy','Sally','H','111','222','regular'),
+(9,'passport','Jimmy','Sim','I','111','222','regular'),
+(10,'passport','Jimmy','Smit','J','111','222','regular'),
+(11,'passport','Jimmy','Smith','Smith address','777-7777','888-8888','vip'),
+(12,'passport','Jimmy','Stank','Smith guest','333-3333','222-2222','vip'),
+(13,'passport','Jimmy','Smut','guest street','444-4444','555-5555','regular');
 
 INSERT INTO room_type VALUES
 (1,'single',20,2,'basic',100),
@@ -134,7 +138,12 @@ INSERT INTO stay VALUES
 (2,2,'2025-02-10','2025-02-12',104),
 (3,3,'2025-03-10','2025-03-12',107),
 (4,4,'2026-07-15','2026-07-17',110),
-(5,5,'2026-07-20','2026-07-22',113);
+(5,5,'2026-07-20','2026-07-22',113),
+(11,2,'2026-07-19','2026-07-21',NULL),
+(12,2,'2026-07-19','2026-07-21',204),
+(13,1,'2026-03-05','2026-03-07',103),
+(14,2,'2026-06-10','2026-06-12',206),
+(15,1,'2026-07-15','2026-07-17',101);
 
 INSERT INTO reservation VALUES
 (1,1,1,1,'2026-07-15','2026-07-17',2,'single'),
@@ -146,7 +155,12 @@ INSERT INTO reservation VALUES
 (7,2,2,7,'2026-07-11','2026-07-13',2,'single'),
 (8,3,3,8,'2026-07-12','2026-07-14',1,'double'),
 (9,4,4,9,'2026-07-13','2026-07-15',2,'single'),
-(10,5,5,10,'2026-07-14','2026-07-16',1,'double');
+(10,5,5,5,'2026-07-14','2026-07-16',1,'double'),
+(11,2,11,11,'2026-07-19','2026-07-21',1,'double'),
+(12,2,12,6,'2026-07-19','2026-07-21',1,'double'),
+(13,1,13,13,'2026-03-05','2026-03-07',1,'single'),
+(14,2,14,13,'2026-06-10','2026-06-12',1,'single'),
+(15,1,15,3,'2026-07-15','2026-07-17',3,'single');
 
 INSERT INTO occupant VALUES
 (1,1,'John'),
@@ -157,12 +171,16 @@ INSERT INTO occupant VALUES
 (4,4,'David'),
 (5,5,'Eve'),
 (6,1,'Sam'),
-(7,2,'Tom');
+(7,2,'Tom'),
+(11,11,'Mrs. Smith'),
+(12,11,'Mr. Smith');
 
 INSERT INTO billing VALUES
 (1,1,450),
 (2,2,520),
-(3,3,380);
+(3,3,380),
+(5,13,200),
+(6,14,220);
 
 INSERT INTO room_service VALUES
 (1,75),
@@ -170,7 +188,9 @@ INSERT INTO room_service VALUES
 (2,40),
 (2,30),
 (3,100),
-(3,20);
+(3,20),
+(5,20),
+(6,30);
 
 INSERT INTO phone_number VALUES
 (1,'front desk','111-1111'),

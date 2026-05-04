@@ -23,6 +23,8 @@ CREATE TABLE hotel (
 CREATE TABLE guest (
     id int PRIMARY KEY,
     id_type text,
+	first_name text,
+	last_name text,
     address text,
     home_phone text,
     mobile_phone text,
@@ -112,3 +114,6 @@ CREATE TABLE phone_number (
     number text,
     PRIMARY KEY (hotel_id, number)
 );
+
+CREATE INDEX idx_reservation_hotel_dates
+    ON reservation(hotel_id, start_date, end_date);
