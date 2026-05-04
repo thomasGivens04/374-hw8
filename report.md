@@ -10,10 +10,13 @@ We made all weak entities have an identifying relationship. We added id's to the
 ## Relational Model
 *insert the image(s) here*
 
-- Hotel relational model: ![conference review relational model](./images/relational_model_new.webp)
+- Hotel relational model: ![conference review relational model](./images/HW8_Relational_Model.png)
 
 *Describe any changes since HW7*
-We had to change the relational model to match the new eer model.
+Removed unnecessary connectors that don’t represent the true relationships (ie. stay having a hotel_id FK when in reality it is entirely unnecessary)
+
+Also added new connectors where necessary (ie. reservation having a link to room type through the room types new primary key)
+
 
 ## Database creation
 *Link the files here*
@@ -28,6 +31,7 @@ We had to change the relational model to match the new eer model.
 *Describe any changes very briefly: for example:*
 
 We had to add extra data to be inserted into the tables.
+
 
 ## Queries
 
