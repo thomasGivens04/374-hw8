@@ -49,7 +49,7 @@ Data updates made for the queries:
 *Describe the queries in detail with screenshots of the data setup and the results*
 This query finds available rooms for hotel A over the selected stay dates (July 15–16, 2026). It builds a date range for the requested period, identifies the correct season for hotel 1, and then calculates nightly prices by weekday using the `pricing` table. It also summarizes room inventory by type and subtracts rooms already reserved for overlapping dates. The result shows available room types, total rooms, reserved rooms, and the number of rooms remaining. The query applies the VIP discount from `cat_discount` to compute an adjusted average cost per night for the guest. After the availability logic, it begins a transaction and inserts a new VIP guest, a new stay, and a reservation, demonstrating how the system moves from search to booking.
 
-![query 1 results](./images/q1_results.PNG)
+![query 1 results](./images/q1_results_nes.PNG)
 
 ### Query 2
 *Link the code file(s) here from subdirectory queries*
