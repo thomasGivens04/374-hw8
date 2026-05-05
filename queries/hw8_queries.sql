@@ -53,7 +53,7 @@ SELECT ti.type AS room_type,
        ti.total_rooms - COALESCE(r.reserved_rooms, 0) AS available_rooms,
        ROUND(
          (
-           (ti.base_price + ad.avg_cost)
+           (ti.base_price + COALESCE(ad.avg_cost, 0))
            * (1 - vd.pct / 100.0)
          )::numeric,
          2
