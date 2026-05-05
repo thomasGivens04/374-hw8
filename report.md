@@ -29,6 +29,14 @@ We had to change the relational model to match the new eer model.
 
 We had to add extra data to be inserted into the tables.
 
+## Data
+Data updates made for the queries:
+- We added a vip guest and a vip discount category so that pricing can be discounted based off the category.
+- We created overlapping stays so that room availability can be shown and tested.
+- We also inserted room service charges to the billing to demonstrate final bill amounts.
+- We also had to make a guest stay at multiple hotels to show the total spent query. 
+
+
 ## Queries
 
 ### Query 1
@@ -36,7 +44,8 @@ We had to add extra data to be inserted into the tables.
 - [hw8_queries.sql](./queries/hw8_queries.sql)
 
 *Describe the queries in detail with screenshots of the data setup and the results*
-We get all the available rooms and room types for hotel A for the requested dates. We get the price of the rooms for each night of the stay. We make sure to add the vip discount to the billing. We then reserve on of the rooms for the guest and add their stay to the hotel.
+This query finds available rooms for hotel A over the selected stay dates (July 15–16, 2026). It builds a date range for the requested period, identifies the correct season for hotel 1, and then calculates nightly prices by weekday using the `pricing` table. It also summarizes room inventory by type and subtracts rooms already reserved for overlapping dates. The result shows available room types, total rooms, reserved rooms, and the number of rooms remaining. The query applies the VIP discount from `cat_discount` to compute an adjusted average cost per night for the guest. After the availability logic, it begins a transaction and inserts a new VIP guest, a new stay, and a reservation, demonstrating how the system moves from search to booking.
+
 ![query 1 results](./images/q1_results.PNG)
 
 ### Query 2
@@ -44,7 +53,8 @@ We get all the available rooms and room types for hotel A for the requested date
 - [hw8_queries.sql](./queries/hw8_queries.sql)
 
 *Describe the queries in detail with screenshots of setup and results*
-Checks for available double rooms in hotel B. We then assign the room to the guests and occupants.
+This query finds an available double room in hotel B for July 19, 2026. It joins `room` and `room_type` to identify hotel B double rooms, then filters out any room that has a conflicting stay on that date using `NOT EXISTS` against the `stay` table. Once an available room is found, the script updates stay ID 11 to assign room 205 and inserts an occupant record for Mr. Smith. This shows the reservation system assigning a physical room and tracking the people staying there.
+
 ![query 2 results](./images/q2_results.PNG)
 
 ### Query 3
@@ -52,7 +62,8 @@ Checks for available double rooms in hotel B. We then assign the room to the gue
 - [hw8_queries.sql](./queries/hw8_queries.sql)
 
 *Describe the queries in detail with screenshots of setup and results*
-First we check the guests out of their room. Then we get their stay information. After we produce the stays dates, room type, occupants, and the total bill of the stay.
+This query handles checkout and billing for stay ID 11. It inserts a billing record, adds a room service charge, and then clears the room assignment by setting `room_num` to `NULL`. The final SELECT returns the stay date range, the reserved room type, all occupant names, and the total cost. The total cost is calculated by adding the billing total and any room service charges, which confirms the database can produce a complete invoice for a stay.
+
 ![query 3 results](./images/q3_results.PNG)
 
 ### Query 4
@@ -60,7 +71,8 @@ First we check the guests out of their room. Then we get their stay information.
 - [hw8_queries.sql](./queries/hw8_queries.sql)
 
 *Describe the queries in detail with screenshots of setup and results*
-We find the names of the guests reserving a specific room on a specific date. It also finds the occupants staying in the room.
+This query retrieves the reservation and occupancy details for a specific room and date: hotel B room 205 on July 20, 2026. It finds the relevant stay, then returns the reserver’s name and any occupant names for that stay. The result uses a `UNION ALL` to separate the primary reserver role from occupants, showing how the schema supports both the booking party and the people actually staying in the room.
+
 ![query 4 results](./images/q4_results.PNG)
 
 ### Query 5
@@ -68,5 +80,6 @@ We find the names of the guests reserving a specific room on a specific date. It
 - [hw8_queries.sql](./queries/hw8_queries.sql)
 
 *Describe the queries in detail with screenshots of setup and results*
-It starts by finding guest 13 from the guest table and joins it to the reservation table so it can find reservations made by that guest. We count how many different hotels the guest has stayed at and get their bill. The query only returns guests if they have stayed at 2 or more different hotels.
+This query reports spending for guest ID 13 during 2026. It joins `guest`, `reservation`, and `billing`, and left-joins `room_service` to include optional service charges. It calculates how many distinct hotels the guest has visited and sums the total spent across reservations. The query then filters so it only returns results for guests who stayed in at least two different hotels, demonstrating multi-hotel reporting.
+
 ![query 5 results](./images/q5_results.PNG)
